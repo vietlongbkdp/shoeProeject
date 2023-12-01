@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/assets/fontawesome-5.15.4/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/custom-style.css">
     <script src="/assets/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/assets/js/jQuery.js"></script>
 </head>
 <body>
     <div class="container">
@@ -16,12 +17,12 @@
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <i class="fas fa-cart-plus"></i>
-          <a class="navbar-brand" href="#">Shoe Ecommerce</a>
+          <a class="navbar-brand" href="#"()>Shoe Ecommerce</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <input class="form-control me-2" type="search" placeholder="Enter your search shoes" aria-label="Search">
+              <input class="form-control me-2 search" oninput="showData()" type="search" placeholder="Enter your search shoes" aria-label="Search" id="input-search" value="">
               <i class="fas fa-search"></i>
             </div>
           <div class="login_area">
@@ -31,19 +32,258 @@
         </div>
       </nav>
       <!-- End TopBar -->
-      <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-        <div class="grid-item">7</div>
-        <div class="grid-item">8</div>
-        <div class="grid-item">9</div>
-      </div>
+      <div class="row">
+        <div class="col-2 side-bar">
 
-    </div>
-        
+          <div class="categoy-check">
+            <h5>Category</h5>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input category" onclick="showData()" type="radio" name="flexRadioCategory" id="flexRadioCategoryAll" checked value="all">
+                <label class="form-check-label" for="flexRadioCategoryAll">
+                  All
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input category" onclick="showData()" type="radio" name="flexRadioCategory" id="flexRadioCategorySneakers" value="sneakers">
+                <label class="form-check-label" for="flexRadioCategorySneakers">
+                  Sneakers
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input category" onclick="showData()" type="radio" name="flexRadioCategory" id="flexRadioCategoryFlats"  value="flats">
+                <label class="form-check-label" for="flexRadioCategoryFlats">
+                  Flats
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input category" onclick="showData()" type="radio" name="flexRadioCategory" id="flexRadioCategorySandals" value="sandals">
+                <label class="form-check-label" for="flexRadioCategorySandals">
+                  Sandals
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input category" onclick="showData()" type="radio" name="flexRadioCategory" id="flexRadioCategoryHeels" value="heels">
+                <label class="form-check-label" for="flexRadioCategoryHeels">
+                  Heels
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="price-check">
+            <h5>Price</h5>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioPrice" id="flexRadioPriceAll" checked>
+                <label class="form-check-label" for="flexRadioPriceAll">
+                  All
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioPrice" id="flexRadioPriceSneakers">
+                <label class="form-check-label" for="flexRadioPriceSneakers">
+                  $0 - $50
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioPrice" id="flexRadioPriceFlats">
+                <label class="form-check-label" for="flexRadioPriceFlats">
+                  $50 - $100
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioPrice" id="flexRadioPriceSandals">
+                <label class="form-check-label" for="flexRadioPriceSandals">
+                  $100 - $150
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioPrice" id="flexRadioPriceHeels">
+                <label class="form-check-label" for="flexRadioPriceHeels">
+                  Over $150
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="color-check">
+            <h5>Color</h5>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input color" onclick="showData()" type="radio" name="flexRadioColor" id="flexRadioColorAll" style="background-color: blueviolet;" checked value="all">
+                <label class="form-check-label" onclick="showData()" for="flexRadioColorAll">
+                  All
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input color" onclick="showData()" type="radio" name="flexRadioColor" id="flexRadioColorBlack" style="background-color: black;" value="black">
+                <label class="form-check-label" for="flexRadioColorBlack">
+                  Black
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input color" onclick="showData()" type="radio" name="flexRadioColor" id="flexRadioColorBlue" style="background-color: blue;"  value="blue">
+                <label class="form-check-label" for="flexRadioColorBlue">
+                  Blue
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input color" onclick="showData()" type="radio" name="flexRadioColor" id="flexRadioColorRed" style="background-color: red;" value="red">
+                <label class="form-check-label" for="flexRadioColorRed">
+                  Red
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input color" onclick="showData()" type="radio" name="flexRadioColor" id="flexRadioColorWhite" style="background-color: white;" value="white">
+                <label class="form-check-label" for="flexRadioColorWhite">
+                  White
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input color" onclick="showData()" type="radio" name="flexRadioColor" id="flexRadioColorGreen" style="background-color: green;" value="green">
+                <label class="form-check-label" for="flexRadioColorGreen">
+                  Green
+                </label>
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+        <div class="col-10">
+          <div class="brand-select">
+            <h5>Recommended</h5>
+            <div role="group" aria-label="Basic radio toggle button group">
+              <input type="radio" class="btn-check brand" onclick="showData()" name="brandSelect" id="brandAll" autocomplete="off" checked value="all">
+              <label class="btn btn-outline-secondary" for="brandAll">All Products</label>
+            
+              <input type="radio" class="btn-check brand" onclick="showData()" name="brandSelect" id="brandNike" autocomplete="off" value="Nike">
+              <label class="btn btn-outline-secondary" for="brandNike">Nike</label>
+            
+              <input type="radio" class="btn-check brand" onclick="showData()" name="brandSelect" id="brandAdidas" autocomplete="off" value="Adidas">
+              <label class="btn btn-outline-secondary" for="brandAdidas">Adidas</label>
+
+              <input type="radio" class="btn-check brand" onclick="showData()" name="brandSelect" id="brandPuma" autocomplete="off"  value="Puma">
+              <label class="btn btn-outline-secondary" for="brandPuma">Puma</label>
+
+              <input type="radio" class="btn-check brand" onclick="showData()" name="brandSelect" id="brandVans" autocomplete="off" value="Vans">
+              <label class="btn btn-outline-secondary" for="brandVans">Vans</label>
+            </div>
+          </div>
+          <div class="main-product">
+            <h5>Products</h5>
+          <div class="container-fluid">
+            <div class="row" id="product-data">
+            </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <script>
+     async function getAllData(){
+      return await $.ajax({
+      url: 'https://jsonserver-vercel-api.vercel.app/products',
+        })
+        }
+      async function showData() {
+        $('#product-data').empty()
+      const category = $('input[name="flexRadioCategory"]:checked').val();
+      const color = $('input[name="flexRadioColor"]:checked').val();
+      const brand = $('input[name="brandSelect"]:checked').val();
+      const search = $('#input-search').val();
+        const products = await getAllData();
+        var listCategory = []
+        var listColor = []
+        var listSearch = []
+        var listBrand = []
+        // console.log(products);
+        products.forEach(element =>{
+            if(category == 'all'){
+                listCategory.push(element)
+            } else if(element.category == category){
+              listCategory.push(element)
+            } 
+        })
+        // console.log(listCategory);
+        listCategory.forEach(element =>{
+          if(color == 'all'){
+            listColor.push(element)
+          }else if(element.color == color){
+            listColor.push(element)
+          }
+        })
+        // console.log(listColor);
+        listColor.forEach(element =>{
+          if(brand == 'all'){
+            listBrand.push(element)  
+          }else if(element.company == brand)
+          listBrand.push(element)
+        })
+        listBrand.forEach(element =>{
+            if(element.title.includes(search)){
+              listSearch.push(element)
+            }
+        })
+        // console.log(listSearch);
+        listSearch.forEach(element => {
+            const strRender = renderProduct(element)
+            $('#product-data').prepend(strRender)
+            const starIndex = parseInt(element.star)
+            for(let i=0; i<starIndex; i++){
+              $('#star-counter').prepend(renderStar())
+            }
+        });
+        // console.log(listSearch);
+      }
+      function renderStar() {
+          return `<i class="fas fa-star" style="color: #fbff00;"></i>`
+      }
+      function renderProduct(product) {
+        return `  <div class="col-3 product-cell">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="image-shoes">
+                        <img src=${product.img} class="card-img-top">
+                      </div>
+                      <h5 class="card-title">${product.title}</h5>
+                      <div class="review">
+                            <div class="star-count" id="star-counter">
+                          </div>
+                          <div class="rieviewer-count">
+                            (${product.reviews} reviewer)
+                          </div>
+                      </div>
+                      <div class="buyProduct">
+                          <del class="prev-price line-through me-2">$${product.newPrice}</del>
+                          <div class="new-price">$${product.prevPrice}</div>
+                        <div class="bt-add-to-cart">
+                          <i class="fas fa-cart-arrow-down"></i>
+                        </div>
+                    </div>
+  
+                    </div>
+                  </div>
+              </div>`
+      }
+      // function addEvent(){
+      //   document.querySelector('.search').addEventListener('input', showData())
+      //   document.querySelectorAll('.category').addEventListener('click', showData())
+      //   document.querySelectorAll('.color').addEventListener('click', showData())
+      //   document.querySelectorAll('.brand').addEventListener('click', showData())
+      // }
+      $(async () => {
+        await showData()
+        // await addEvent()
+        // await console.log("load xong");
+      })
+ 
+      // console.log(category);
+      // console.log(color);
+      // console.log(brand);
+      // console.log(search);
+    </script>
 </body>
 </html>
